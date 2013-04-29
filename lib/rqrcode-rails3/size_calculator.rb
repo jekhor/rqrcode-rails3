@@ -23,7 +23,7 @@ module RQRCode
     
     def minimum_qr_size_from_string(string)
       QR_CHAR_SIZE_VS_SIZE.each_with_index do |size, index|
-        return (index + 1) if string.size < size
+        return (index + 1) if string.bytesize < size
       end
       
       # If it's particularly big, we'll try and create codes until it accepts
